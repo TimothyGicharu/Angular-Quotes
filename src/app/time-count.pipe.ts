@@ -6,17 +6,17 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class TimeCountPipe implements PipeTransform {
 
   transform(value: any): number {
-    let now: Date = new Date(); // get current date and time
-    let nowWithNoDate: any = new Date(now.getHours(), now.getMinutes(), now.getSeconds());
+    let today: Date = new Date(); // get current date and time
+    let todayWithNoDate: any = new Date(today.getFullYear(), today.getMonth(), today.getDate());
 
-    var timeDifference = Math.abs(value - nowWithNoDate) //returns value in milliseconds
+    var dateDifference = Math.abs(value - todayWithNoDate) //returns value in milliseconds
 
-    const secondsInHour = 3600;
-    var timeDifferenceSeconds = timeDifference * 0.001; //convert milliseconds to seconds
-    var timeCounter = timeDifferenceSeconds / secondsInHour;
+    const secondsInDay = 86400;
+    var dateDifferenceSeconds = dateDifference * 0.001; //convert milliseconds to seconds
+    var dateCounter = dateDifferenceSeconds / secondsInDay;
 
-    if (timeCounter >= 0 && value > nowWithNoDate) {
-      return timeCounter;
+    if (dateCounter >= 0 && value > todayWithNoDate) {
+      return dateCounter;
     } else {
       return 0;
     }

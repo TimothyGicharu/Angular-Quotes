@@ -17,12 +17,12 @@ import { QuoteFormComponent } from './components/quote-form/quote-form.component
     QuoteDetailComponent,
     StrikethroughDirective,
     TimeCountPipe,
-    QuoteFormComponent,
-    FormsModule
+    QuoteFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

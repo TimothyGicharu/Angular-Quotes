@@ -9,10 +9,16 @@ import { Quote } from '../../models/Quote';
 export class QuoteComponent implements OnInit {
 
   quotes: Quote[] = [
-    new Quote('First quote', 'First description', new Date(2020, 3, 14)),
-    new Quote('Second quote', 'Second description', new Date(2030, 4, 12)),
-    new Quote('Third quote', 'Third description', new Date(2020, 9, 13))
+    new Quote('First quote', 'First description', new Date(2020, 7, 22)),
+    new Quote('Second quote', 'Second description', new Date(2020, 7, 23)),
+    new Quote('Third quote', 'Third description', new Date(2020, 7, 13))
   ];
+
+  addNewQuote(quote) {
+    let quoteLength = this.quotes.length;
+    quote.completeDate = new Date(quote.completeDate)
+    this.quotes.push(quote)
+  }
 
   toggleDetails(index) {
     this.quotes[index].showDescription = !this.quotes[index].showDescription;
