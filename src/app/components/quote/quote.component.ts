@@ -9,9 +9,8 @@ import { Quote } from '../../models/Quote';
 export class QuoteComponent implements OnInit {
 
   quotes: Quote[] = [
-    new Quote('First quote', 'First description', new Date(2020, 7, 22)),
-    new Quote('Second quote', 'Second description', new Date(2020, 7, 23)),
-    new Quote('Third quote', 'Third description', new Date(2020, 7, 13))
+    new Quote('Hardwork pays!', 'Hardwork', new Date(2020, 7, 22)),
+    new Quote('Better late than never.', 'Punctuality', new Date(2020, 7, 23))
   ];
 
   addNewQuote(quote) {

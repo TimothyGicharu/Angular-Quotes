@@ -4,7 +4,11 @@
     <hr>
 
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
+            <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+        </div>
+        
+        <div class="col-md-12">
             <div *ngFor='let quote of quotes;let i = index'>
                 <div>
                     <h5 appStrikethrough>{{ quote.name }} created on {{quote.completeDate | date | uppercase}}</h5>
@@ -15,9 +19,6 @@
                     <app-quote-detail [quote]='quote' (isComplete)='deleteQuote($event,i)'></app-quote-detail>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6">
-            <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
         </div>
     </div>
 </div>
